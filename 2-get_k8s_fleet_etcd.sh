@@ -41,7 +41,7 @@ then
     # download etcd and fleet clients for OS X
     ETCD_RELEASE=$(ssh core@$master_ip etcdctl --version | cut -d " " -f 3- | tr -d '\r')
     echo "Downloading etcdctl v$ETCD_RELEASE for OS X"
-    curl -L -o etcd.zip "https://github.com/coreos/etcd/releases/download/v$ETCD_RELEASE/etcd-v$ETCD_RELEASE-darwin-amd64.zip"
+    curl -L -o etcd.zip "https://github.com/coreos/fleet/releases/download/v0.11.5/fleet-v0.11.5-darwin-amd64.zip"
     unzip -j -o "etcd.zip" "etcd-v$ETCD_RELEASE-darwin-amd64/etcdctl"
     mv -f etcdctl ~/k8s-bin
     # clean up
@@ -52,7 +52,7 @@ then
     #
     FLEET_RELEASE=$(ssh core@$master_ip fleetctl version | cut -d " " -f 3- | tr -d '\r')
     echo "Downloading fleetctl v$FLEET_RELEASE for OS X"
-    curl -L -o fleet.zip "https://github.com/coreos/fleet/releases/download/v$FLEET_RELEASE/fleet-v$FLEET_RELEASE-darwin-amd64.zip"
+    curl -L -o fleet.zip "https://github.com/coreos/fleet/releases/download/v0.11.5/fleet-v0.11.5-darwin-amd64.zip"
     unzip -j -o "fleet.zip" "fleet-v$FLEET_RELEASE-darwin-amd64/fleetctl"
     mv -f fleetctl ~/k8s-bin
     # clean up
